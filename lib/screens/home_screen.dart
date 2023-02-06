@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
           MapTileLayer(
             controller: _mapTileLayerController,
             urlTemplate:  _satellite ? 'https://api.tomtom.com/map/1/tile/sat/main/{z}/{x}/{y}.jpg?key=$mapSecretKey'
-                : !_mapDarkMode ? 'https://api.tomtom.com/map/1/tile/basic/night/{z}/{x}/{y}.png?key=$mapSecretKey'
+                : _mapDarkMode ? 'https://api.tomtom.com/map/1/tile/basic/night/{z}/{x}/{y}.png?key=$mapSecretKey'
                 : 'https://api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=$mapSecretKey',
             zoomPanBehavior: MapZoomPanBehavior(
               enableDoubleTapZooming: true,
