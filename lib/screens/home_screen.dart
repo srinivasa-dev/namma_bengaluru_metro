@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:namma_bengaluru_metro/components/colors.dart';
 import 'package:namma_bengaluru_metro/models/marker_model.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
 import 'package:namma_bengaluru_metro/auth/secrets.dart';
@@ -83,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
             initialMarkersCount: _pointList.length,
             sublayers: [
               MapPolylineLayer(
-                color: Colors.purple,
+                color: AppColors.purple,
                 width: 5.0,
                 polylines: {
                   MapPolyline(
@@ -94,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               MapPolylineLayer(
-                color: Colors.purple,
+                color: AppColors.purple,
                 width: 5.0,
                 polylines: {
                   MapPolyline(
@@ -105,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               MapPolylineLayer(
-                color: Colors.purple,
+                color: AppColors.purple,
                 width: 5.0,
                 polylines: {
                   MapPolyline(
@@ -116,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               MapPolylineLayer(
-                color: Colors.green,
+                color: AppColors.green,
                 width: 5.0,
                 polylines: {
                   MapPolyline(
@@ -127,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               MapPolylineLayer(
-                color: Colors.green,
+                color: AppColors.green,
                 width: 5.0,
                 polylines: {
                   MapPolyline(
@@ -138,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               MapPolylineLayer(
-                color: Colors.green,
+                color: AppColors.green,
                 width: 5.0,
                 polylines: {
                   MapPolyline(
@@ -149,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               MapPolylineLayer(
-                color: Colors.yellow[700],
+                color: AppColors.yellow,
                 width: 5.0,
                 polylines: {
                   MapPolyline(
@@ -160,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               MapPolylineLayer(
-                color: Colors.pink[300],
+                color: AppColors.pink,
                 width: 5.0,
                 polylines: {
                   MapPolyline(
@@ -171,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               MapPolylineLayer(
-                color: Colors.blue,
+                color: AppColors.blue,
                 width: 5.0,
                 polylines: {
                   MapPolyline(
@@ -182,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               MapPolylineLayer(
-                color: Colors.blue,
+                color: AppColors.blue,
                 width: 5.0,
                 polylines: {
                   MapPolyline(
@@ -205,23 +206,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 40.0,
                     width: 40.0,
                     decoration: _pointList[index].properties.line == 'junction' ?  BoxDecoration(
-                      gradient: const LinearGradient(
+                      gradient: LinearGradient(
                         colors: [
-                          Colors.green,
-                          Colors.purple,
+                          AppColors.green,
+                          AppColors.purple,
                         ],
-                        begin: FractionalOffset(0.0, 0.0),
-                        end: FractionalOffset(1.0, 0.0),
-                        stops: [0.0, 1.0],
+                        begin: const FractionalOffset(0.0, 0.0),
+                        end: const FractionalOffset(1.0, 0.0),
+                        stops: const [0.0, 1.0],
                         tileMode: TileMode.clamp,
                       ),
                       borderRadius: BorderRadius.circular(5.0),
                     ) : BoxDecoration(
-                      color: _pointList[index].properties.line == 'green' ? Colors.green
-                          : _pointList[index].properties.line == 'purple' ? Colors.purple
-                          :_pointList[index].properties.line == 'blue' ? Colors.blue
-                          : _pointList[index].properties.line == 'yellow' ? Colors.yellow[700]
-                          : _pointList[index].properties.line == 'pink' ? Colors.pink[300] : Colors.transparent,
+                      color: _pointList[index].properties.line == 'green' ? AppColors.green
+                          : _pointList[index].properties.line == 'purple' ? AppColors.purple
+                          :_pointList[index].properties.line == 'blue' ? AppColors.blue
+                          : _pointList[index].properties.line == 'yellow' ? AppColors.yellow
+                          : _pointList[index].properties.line == 'pink' ? AppColors.pink : Colors.transparent,
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     alignment: Alignment.center,
