@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # Only works with v2
       - name: Run secrets
-          run: echo $SECRETS_FILE_CONTENTS | base64 -d > lib/auth/secrets.dart
-#         SECRETS_FILE_CONTENTS: ${{ secrets.SECRETS_FILE_CONTENTS }}
+        run: echo $SECRETS_FILE_CONTENTS | base64 -d > lib/auth/secrets.dart
+#       SECRETS_FILE_CONTENTS: ${{ secrets.SECRETS_FILE_CONTENTS }}
       - uses: subosito/flutter-action@v1
       - uses: erickzanardo/flutter-gh-pages@v7
         with:
