@@ -17,5 +17,5 @@ jobs:
 #      - run: flutter build web --dart-define TOMTOM_KEY=$SECRETS_FILE_CONTENTS
       - uses: erickzanardo/flutter-gh-pages@v7
         with:
-          customArgs: --dart-define TOMTOM_KEY=$SECRETS_FILE_CONTENTS
+          customArgs: --dart-define TOMTOM_KEY=${{ secrets.SECRETS_FILE_CONTENTS }}
           basehref: /namma_bengaluru_metro/
