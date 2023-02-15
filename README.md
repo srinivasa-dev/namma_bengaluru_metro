@@ -8,5 +8,5 @@ Metro Map JSON was referred out of [Sajjad Anwar - geohacker](https://github.com
 
 | OS | Actions |
 |----------|----------|
-| Android   | [Download](#)   |
-| Web   | [Open](#)   |
+| Android   | [Download](https://drive.google.com/uc?export=download&id=1aTJDhwLLgidFbDqM06l_VtJbdz1pGxRp)  |
+| Web   | [Open](https://srinivasa-dev.github.io/namma_bengaluru_metro/)   |
