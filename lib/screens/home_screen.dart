@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:namma_bengaluru_metro/components/colors.dart';
+import 'package:namma_bengaluru_metro/env.dart';
 import 'package:namma_bengaluru_metro/models/marker_model.dart';
 import 'package:namma_bengaluru_metro/widgets/custom_textfield.dart';
 import 'package:namma_bengaluru_metro/widgets/icon_tile.dart';
@@ -214,9 +215,9 @@ class _HomeScreenState extends State<HomeScreen> {
       layers: [
         MapTileLayer(
           controller: _mapTileLayerController,
-          urlTemplate:  _satellite ? 'https://api.tomtom.com/map/1/tile/sat/main/{z}/{x}/{y}.jpg?key=$mapSecretKey'
-              : _mapDarkMode ? 'https://api.tomtom.com/map/1/tile/basic/night/{z}/{x}/{y}.png?key=$mapSecretKey'
-              : 'https://api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=$mapSecretKey',
+          urlTemplate:  _satellite ? 'https://api.tomtom.com/map/1/tile/sat/main/{z}/{x}/{y}.jpg?key=${ApiService.tomtomKey.isNotEmpty ? ApiService.tomtomKey : mapSecretKey}'
+              : _mapDarkMode ? 'https://api.tomtom.com/map/1/tile/basic/night/{z}/{x}/{y}.png?key=${ApiService.tomtomKey.isNotEmpty ? ApiService.tomtomKey : mapSecretKey}'
+              : 'https://api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=${ApiService.tomtomKey.isNotEmpty ? ApiService.tomtomKey : mapSecretKey}',
           zoomPanBehavior: _zoomPanBehavior,
           initialZoomLevel: 13,
           initialFocalLatLng: const MapLatLng(12.9716, 77.5946),
