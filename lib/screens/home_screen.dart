@@ -8,6 +8,7 @@ import 'package:namma_bengaluru_metro/widgets/custom_textfield.dart';
 import 'package:namma_bengaluru_metro/widgets/icon_tile.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
 import 'package:namma_bengaluru_metro/auth/secrets.dart';
+import 'package:namma_bengaluru_metro/auth/secret.dart' as s;
 
 
 
@@ -214,9 +215,9 @@ class _HomeScreenState extends State<HomeScreen> {
       layers: [
         MapTileLayer(
           controller: _mapTileLayerController,
-          urlTemplate:  _satellite ? 'https://api.tomtom.com/map/1/tile/sat/main/{z}/{x}/{y}.jpg?key=$mapSecretKey'
-              : _mapDarkMode ? 'https://api.tomtom.com/map/1/tile/basic/night/{z}/{x}/{y}.png?key=$mapSecretKey'
-              : 'https://api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=$mapSecretKey',
+          urlTemplate:  _satellite ? 'https://api.tomtom.com/map/1/tile/sat/main/{z}/{x}/{y}.jpg?key=${s.mapSecretKey}'
+              : _mapDarkMode ? 'https://api.tomtom.com/map/1/tile/basic/night/{z}/{x}/{y}.png?key=${s.mapSecretKey}'
+              : 'https://api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=${s.mapSecretKey}',
           zoomPanBehavior: _zoomPanBehavior,
           initialZoomLevel: 13,
           initialFocalLatLng: const MapLatLng(12.9716, 77.5946),
