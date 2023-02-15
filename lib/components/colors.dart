@@ -7,4 +7,7 @@ class AppColors {
   static Color blue = Colors.blue;
   static Color yellow = Colors.yellow[700]!;
   static Color pink = Colors.pink[300]!;
+  static Color royalBlue = const Color(0xff29316F);
+  static Color white = Colors.white;
+  static Color grey = Colors.grey;
 }
