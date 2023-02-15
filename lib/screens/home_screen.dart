@@ -215,9 +215,9 @@ class _HomeScreenState extends State<HomeScreen> {
       layers: [
         MapTileLayer(
           controller: _mapTileLayerController,
-          urlTemplate:  _satellite ? 'https://api.tomtom.com/map/1/tile/sat/main/{z}/{x}/{y}.jpg?key=${ApiService.tomtomKey.isNotEmpty ? ApiService.tomtomKey : mapSecretKey}'
-              : _mapDarkMode ? 'https://api.tomtom.com/map/1/tile/basic/night/{z}/{x}/{y}.png?key=${ApiService.tomtomKey.isNotEmpty ? ApiService.tomtomKey : mapSecretKey}'
-              : 'https://api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=${ApiService.tomtomKey.isNotEmpty ? ApiService.tomtomKey : mapSecretKey}',
+          urlTemplate:  _satellite ? 'https://api.tomtom.com/map/1/tile/sat/main/{z}/{x}/{y}.jpg?key=${ApiService.tomtomKey}'
+              : _mapDarkMode ? 'https://api.tomtom.com/map/1/tile/basic/night/{z}/{x}/{y}.png?key=${ApiService.tomtomKey}'
+              : 'https://api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=${ApiService.tomtomKey}',
           zoomPanBehavior: _zoomPanBehavior,
           initialZoomLevel: 13,
           initialFocalLatLng: const MapLatLng(12.9716, 77.5946),
