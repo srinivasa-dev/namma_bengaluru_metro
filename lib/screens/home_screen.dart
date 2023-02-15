@@ -8,7 +8,6 @@ import 'package:namma_bengaluru_metro/models/marker_model.dart';
 import 'package:namma_bengaluru_metro/widgets/custom_textfield.dart';
 import 'package:namma_bengaluru_metro/widgets/icon_tile.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
-import 'package:namma_bengaluru_metro/auth/secrets.dart';
 
 
 
