@@ -32,7 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  syncfusion_flutter_maps: ^20.4.44
+  syncfusion_flutter_maps: ^20.4.50
   http: ^0.13.5
   url_launcher: ^6.1.8
   google_fonts: ^4.0.1
