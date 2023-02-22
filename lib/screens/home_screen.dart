@@ -87,39 +87,47 @@ class _HomeScreenState extends State<HomeScreen> {
       ) : Stack(
         children: [
           buildSfMaps(),
-          MediaQuery.of(context).size.width > 768 || MediaQuery.of(context).orientation == Orientation.landscape ? SafeArea(
-            child: Container(
-              width: MediaQuery.of(context).size.width / 3.5,
-              margin: const EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
-              decoration: BoxDecoration(
-                color: AppColors.white,
-                borderRadius: BorderRadius.circular(5.0),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  buildCustomTextField(),
-                  const SizedBox(height: 15.0,),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: lineList(_searchController.text.isEmpty ? _pointList : _searchList),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              if(constraints.maxWidth > constraints.maxHeight) {
+                return SafeArea(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 3.5,
+                    margin: const EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
+                    decoration: BoxDecoration(
+                      color: AppColors.white,
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        buildCustomTextField(),
+                        const SizedBox(height: 15.0,),
+                        Expanded(
+                          child: SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: lineList(_searchController.text.isEmpty ? _pointList : _searchList),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ),
-          ) : Column(
-            children: [
-              Container(
-                color: scrollingHeight == 1 ? AppColors.white : Colors.transparent,
-                child: SafeArea(
-                  child: buildCustomTextField(),
-                ),
-              ),
-              buildDraggableScrollableSheet(),
-            ],
+                );
+              } else {
+                return Column(
+                  children: [
+                    Container(
+                      color: scrollingHeight == 1 ? AppColors.white : Colors.transparent,
+                      child: SafeArea(
+                        child: buildCustomTextField(),
+                      ),
+                    ),
+                    buildDraggableScrollableSheet(),
+                  ],
+                );
+              }
+            },
           ),
         ],
       ),
